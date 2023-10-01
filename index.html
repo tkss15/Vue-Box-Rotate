@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+<div id="app" >
+    <h1>
+        CSS3 Perspective Playground
+    </h1>
+    <section class="main">
+        <article>
+            <p>
+                <label for="prespective">perspective: {{perspective}}px</label>
+                <input v-model="perspective" type="range" name="prespective" id="prespective" min="0" max="999">            
+            </p>
+            <p>
+                <label for="rotateX">rotateX: {{rotateX}} deg</label>
+                <input v-model="rotateX" type="range" name="rotateX" id="rotateX" min="0" max="360" >            
+            </p>
+            <p>
+                <label for="rotateY">rotateY: {{rotateY}} deg</label>
+                <input v-model="rotateY" type="range" name="rotateY" id="rotateY" min="0" max="360">            
+            </p>
+            <p>
+                <label for="rotateZ">rotateZ: {{rotateZ}} deg</label>
+                <input v-model="rotateZ" type="range" name="rotateZ" id="rotateZ" min="0" max="360">
+            </p>
+            <button type="button" @click="copytoclip()">Copy</button>
+            <button type="button" @click="resetbox()">Reset</button>
+        </article>
+        <figure>
+            <div class="box" :style="[getPerspective,getRotate3D]"></div>
+        </figure>
+    </section>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
